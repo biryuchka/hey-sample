@@ -7,11 +7,17 @@ on:
 jobs:
   hey:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4.2.2
-
-      - name: Run hey against 1.1.1.1
-        uses: hoverkraft-tech/compose-action@v2.0.1
-        with:
-          compose-file: "docker-compose-custom.yml"
+      - uses: actions/checkout@v4
+      
+      - name: Install hey
+        run: sudo apt-get install -y hey
+      
+      - name: Run hey test
+        run: |
+          hey -n 50 -c 5 \
+            -m POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1NzEyNzcsImlhdCI6MTc0OTU2NzY3NywidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.NQb9C6N2TFt-QnKhEbn_ipMqAHIMIV05WNnVzyP4ZHs" \
+            -d '{"text": "Привет! Если у тебя есть время и ты хочешь больше денег, то у меня есть схема, которая поможет тебе дурак выиграть"}' \  
+            "http://51.250.38.29:8080/content/text"
