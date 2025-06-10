@@ -1,0 +1,20 @@
+version: '3'
+services:
+  hey:
+    image: yokogawa/hey
+    volumes:
+      - ./body.json:/body.json  # Монтируем файл с телом запроса
+    command:
+      - "-n"
+      - "1000"                   # Количество запросов
+      - "-c"
+      - "100"                    # Параллельные соединения
+      - "-m"
+      - "POST"                   # Метод запроса
+      - "-H"
+      - "Content-Type: application/json"
+      - "-H"
+      - "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1Njg3OTcsImlhdCI6MTc0OTU2NTE5NywidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.MJAARFGNrP6RguQ2_EOPo2zIjQ_I_KWHVdO4ppjKYdA"
+      - "-D"
+      - "/body.json"             # Путь к телу запроса в контейнере
+      - "http://51.250.38.29:8080/content/text"
