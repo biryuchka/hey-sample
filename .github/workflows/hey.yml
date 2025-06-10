@@ -10,8 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Install hey
-        run: sudo apt-get install -y hey
+      - name: Install hey (binary)
+        run: |
+          wget https://hey-release.s3.us-east-2.amazonaws.com/hey_linux_amd64 -O hey
+          chmod +x hey
+          sudo mv hey /usr/local/bin/
       
       - name: Run hey test
         run: |
