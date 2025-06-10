@@ -1,6 +1,8 @@
-name: run `hey` against 1.1.1.1
+name: Run hey against 1.1.1.1
 
-on: [push]
+on: 
+  push:
+    branches: [ main ] 
 
 jobs:
   hey:
@@ -12,4 +14,4 @@ jobs:
       - name: Run hey against 1.1.1.1
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
-          compose-file: "docker-compose-1.1.1.1.yml"
+          compose-file: "docker-compose-custom.yml"
