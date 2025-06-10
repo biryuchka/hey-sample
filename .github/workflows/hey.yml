@@ -3,7 +3,7 @@ name: run `hey` against 1.1.1.1
 on: [push]
 
 jobs:
-  build:
+  hey:
     runs-on: ubuntu-latest
 
     steps:
