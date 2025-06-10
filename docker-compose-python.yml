@@ -1,0 +1,12 @@
+services:
+  web:
+    image: python:3-slim
+    command: sh -c 'python -m http.server 5000 > /dev/null & sleep 30 ; kill $!'
+    attach: false
+    ports:
+      - "5000:5000"
+  hey-local-web:
+    image: demisto/rakyll-hey:1.0.0.108484
+    depends_on: 
+      - web
+    command: ["hey", "http://web:5000"]

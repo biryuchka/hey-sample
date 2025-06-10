@@ -1,0 +1,4 @@
+services:
+  hey-oneoneoneone:
+    image: demisto/rakyll-hey:1.0.0.108484
+    command: ["hey", "https://1.1.1.1"]

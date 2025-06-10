@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+  hey-local-web:
+    image: demisto/rakyll-hey:1.0.0.108484
+    depends_on: 
+      - nginx
+    command: ["hey", "http://nginx:80"]
