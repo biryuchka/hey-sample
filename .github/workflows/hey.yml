@@ -21,6 +21,6 @@ jobs:
           hey -n 50 -c 5 \
             -m POST \
             -H "Content-Type: application/json" \
-            -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1NzEyNzcsImlhdCI6MTc0OTU2NzY3NywidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.NQb9C6N2TFt-QnKhEbn_ipMqAHIMIV05WNnVzyP4ZHs" \
-            -d '{"text": "Привет! Если у тебя есть время и ты хочешь больше денег, то у меня есть схема, которая поможет тебе дурак выиграть"}' \  
+            -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1NzI4NDAsImlhdCI6MTc0OTU2OTI0MCwidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.kkmRY0pOaCRsdgmzxRJRfzVQ_QwS66kZCV5yoLysLS4" \
+            -d "{\"text\": \"Привет! Если у тебя есть время и ты хочешь больше денег, то у меня есть схема, которая поможет тебе дурак выиграть\"}" \
             "http://51.250.38.29:8080/content/text"
