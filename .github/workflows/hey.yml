@@ -18,7 +18,7 @@ jobs:
       
       - name: Run hey test
         run: |
-          hey -n 50 -c 5 \
+          hey -n 500 -c 10 \
             -m POST \
             -H "Content-Type: application/json" \
             -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1NzI4NDAsImlhdCI6MTc0OTU2OTI0MCwidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.kkmRY0pOaCRsdgmzxRJRfzVQ_QwS66kZCV5yoLysLS4" \
