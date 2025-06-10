@@ -1,20 +1,20 @@
 version: '3'
 services:
   hey:
-    image: yokogawa/hey
+    image: rakyll/hey
     volumes:
-      - ./body.json:/body.json  # Монтируем файл с телом запроса
+      - ./body.json:/body.json
     command:
       - "-n"
-      - "1000"                   # Количество запросов
+      - "100"
       - "-c"
-      - "100"                    # Параллельные соединения
+      - "10"
       - "-m"
-      - "POST"                   # Метод запроса
+      - "POST"
       - "-H"
       - "Content-Type: application/json"
       - "-H"
-      - "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1NjkzNDMsImlhdCI6MTc0OTU2NTc0MywidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.3oGaeb78r0ie0cWLLI56dG_thYISf6c3hiqJ9hGuzLg"
+      - "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1NzEyNzcsImlhdCI6MTc0OTU2NzY3NywidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.NQb9C6N2TFt-QnKhEbn_ipMqAHIMIV05WNnVzyP4ZHs"
       - "-D"
-      - "/body.json"             # Путь к телу запроса в контейнере
+      - "/body.json"
       - "http://51.250.38.29:8080/content/text"
