@@ -14,7 +14,7 @@ services:
       - "-H"
       - "Content-Type: application/json"
       - "-H"
-      - "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1Njg3OTcsImlhdCI6MTc0OTU2NTE5NywidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.MJAARFGNrP6RguQ2_EOPo2zIjQ_I_KWHVdO4ppjKYdA"
+      - "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDk1NjkzNDMsImlhdCI6MTc0OTU2NTc0MywidXNlcl9pZCI6IjhiZjBmOWZlLTNiOTQtNDJjOC1iMTM0LTY3YTYyMjI3NzFkMyJ9.3oGaeb78r0ie0cWLLI56dG_thYISf6c3hiqJ9hGuzLg"
       - "-D"
       - "/body.json"             # Путь к телу запроса в контейнере
       - "http://51.250.38.29:8080/content/text"
